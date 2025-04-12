@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donation Receipt</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h2>Donation Receipt</h2>
+  <div class="receipt">
+    <p><strong>Organ:</strong> <%= donor.organ %></p>
+    <p><strong>Name:</strong> <%= donor.fullName %></p>
+    <p><strong>Age:</strong> <%= donor.age %></p>
+    <p><strong>Blood Type:</strong> <%= donor.bloodType %></p>
+    <p><strong>Contact:</strong> <%= donor.contact %></p>
+    <p><strong>Address:</strong> <%= donor.address %></p>
+  </div>
+  <br>
+  <a href="/thankyou">Finish</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Organ</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h2>Select an Organ to Donate</h2>
+  <div class="organ-list">
+    <form action="/donate" method="GET">
+      <select name="organ" required>
+        <option value="" disabled selected>Select an organ</option>
+        <option value="Kidney">Kidney</option>
+        <option value="Liver">Liver</option>
+        <option value="Heart">Heart</option>
+        <option value="Lungs">Lungs</option>
+        <option value="Pancreas">Pancreas</option>
+        <option value="Eyes">Eyes</option>
+      </select>
+      <br><br>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

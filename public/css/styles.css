@@ -1,0 +1,88 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/images/bg.jpg'); /* 👈 Your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  /* Headings */
+  h2 {
+    margin-bottom: 20px;
+    color: #0077b6;
+  }
+  
+  /* Forms & Content Boxes */
+  form,
+  .organ-list,
+  .receipt {
+    background: rgba(255, 255, 255, 0.9); /* semi-transparent overlay */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  /* Inputs & Selects */
+  form input,
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  /* Button */
+  form button {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #005f87;
+  }
+  
+  /* Receipt Paragraphs */
+  .receipt p {
+    margin: 10px 0;
+  }
+  
+  /* Links */
+  a {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

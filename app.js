@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 const User = require('./models/User');
 const Donor = require('./models/Donor');
@@ -11,10 +11,8 @@ dotenv.config();
 
 const app = express();
 
-// View engine
 app.set('view engine', 'ejs');
 
-// Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
@@ -23,14 +21,12 @@ app.use(session({
   saveUninitialized: false
 }));
 
-// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-// Middleware to protect routes
 function isAuthenticated(req, res, next) {
   if (req.session.userId) return next();
   res.redirect('/login');

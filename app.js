@@ -21,20 +21,15 @@ app.use(session({
   saveUninitialized: false
 }));
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect("mongodb+srv://tegalavenkatesh22csm:OZGJp3uOkBEQyWMW@cluster0.kntfm8v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
-
 function isAuthenticated(req, res, next) {
   if (req.session.userId) return next();
   res.redirect('/login');
 }
-
-// Routes
-
-// Home redirect
 app.get('/', (req, res) => res.redirect('/login'));
 
 // Signup
@@ -113,5 +108,5 @@ app.get('/thankyou', isAuthenticated, (req, res) => {
 });
 
 // Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = 8080;
+app.listen(PORT, () => console.log('Server running on port ${PORT}'));
